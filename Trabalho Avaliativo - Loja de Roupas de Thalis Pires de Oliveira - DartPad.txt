@@ -1,0 +1,347 @@
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+        debugShowCheckedModeBanner: false, 
+        title: 'Navegação', 
+        
+        //home: MyApp(),
+
+        // ROTAS de Navegação
+        initialRoute: '/pagina1',
+        routes:{
+          '/pagina1': (context) => MyApp(),
+          '/pagina2': (context) => SegundaPagina(),
+          '/pagina3': (context) => TerceiraPagina(),
+          '/pagina4': (context) => QuartaPagina(),
+          '/pagina5': (context) => QuintaPagina(),
+          '/pagina6': (context) => SextaPagina(),
+        }
+        
+        
+    ),
+  );
+}
+
+//
+// PRIMEIRA PÁGINA ou TELA ou INTERFACE ou Activity
+//
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      
+      
+      appBar: AppBar(
+        title: Text("Loja de Roupas online de Thalis Pires - Faça Login para entrar"),
+        
+        backgroundColor: Colors.green
+        decoration: new BoxDecoration(color: Colors.red),
+        
+        
+        RaisedButton.icon(onPressed: true, icon: icons.person),
+        RaisedButton.color.green
+        Border.all(width: 2.0, color: const Color(black)),
+        
+        
+              ),
+      
+      
+      body: Center(
+        child: RaisedButton(
+          child: Text("Entrar"),
+          onPressed: () {
+            
+            /*
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => SegundaPagina())
+            );
+            */
+            Navigator.pushNamed(context, '/pagina2');
+
+          },
+        ),
+      ),
+    );
+  }
+}
+
+//
+// SEGUNDA PÁGINA ou TELA ou INTERFACE ou Activity
+//
+class SegundaPagina extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Tela de Login"),
+        automaticallyImplyLeading: false,
+        
+        
+        
+    campoTexto(rotulo, controle) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 5),
+      child: TextFormField(
+        keyboardType: TextInputType.text,
+        style: TextStyle(color: Colors.black[200], fontSize: 20),
+        decoration: InputDecoration(
+          labelText: rotulo,
+          labelStyle: TextStyle(
+            color: Colors.black[200],
+            fontSize: 12,
+          ),
+        ),
+        controller: controle,
+        validator: (value) {
+          return (value.isEmpty) ? "Digite seu email:"  ;
+        },
+      ),
+    );
+  }
+  
+  
+  campoTexto(rotulo, controle) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 5),
+      child: TextFormField(
+        keyboardType: TextInputType.text,
+        style: TextStyle(color: Colors.black[200], fontSize: 20),
+        decoration: InputDecoration(
+          labelText: rotulo,
+          labelStyle: TextStyle(
+            color: Colors.black[200],
+            fontSize: 12,
+          ),
+        ),
+        controller: controle,
+        validator: (value) {
+          return (value.isEmpty) ? "Digite sua senha:";
+        },
+      ),
+    );
+  }
+        
+        
+        
+      ),
+      body: Center(
+        child: Column(
+
+          //mainAxisAlignment: MainAxisAlignment.center,  
+
+          children: <Widget>[
+
+            Padding(padding: EdgeInsets.only(top: 30),),
+            
+            RaisedButton(
+              child: Text("Logar"),
+              onPressed: () {
+
+                /*
+                Navigator.push(context,
+                    MaterialPageRoute(
+                      builder: (context) => TerceiraPagina())
+                );
+                */
+                Navigator.pushNamed(context, '/pagina3');
+
+
+
+              },
+            ),
+
+            SizedBox(height: 20,),
+
+            RaisedButton(
+              child: Text("Voltar"),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+//
+// TERCEIRA PÁGINA ou TELA ou INTERFACE ou Activity
+//
+class TerceiraPagina extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        
+        
+        title: Text("Escolha o modelo"),
+        
+ 
+        title: Text("Camisas"),
+           Icon(
+                Icons.play,
+                color: Colors.black,
+                size: 20.0,
+               )
+        
+        
+        title: Text("Shorts"),
+         Icon(
+                Icons.play,
+                color: Colors.black,
+                size: 20.0,
+                )
+           
+        title: Text("Tenis"),
+            Icon(
+                Icons.play,
+                color: Colors.black,
+                size: 20.0,
+                )
+        
+        title: Text("Acessórios"),
+               Icon(
+                Icons.play,
+                color: Colors.black,
+                size: 20.0,
+                   )
+                 
+                 
+                 RaisedButton(
+                  child: Text("Ver modelos"),
+                  onPressed: () {
+        
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text("voltar"),
+         
+          
+          /*
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => QuartaPagina())
+            );
+            */
+          
+          Navigator.pushNamed(context, '/pagina4');
+
+            
+          },
+        ),
+      ),
+    );
+  }
+}
+
+
+// QUARTA PÁGINA ou TELA ou INTERFACE ou Activity
+//
+class QuartaPagina extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Lista"),
+        backgroundColor: Colors.green
+        decoration: new BoxDecoration(color: Colors.red),
+        RaisedButton.icon(onPressed: true, icon: icons.shoppingcart);
+        RaisedButton.color.black
+              ),
+     
+            /*
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => QuintaPagina())
+            );
+            */
+            Navigator.pushNamed(context, '/pagina5');
+
+       child: RaisedButton(
+          child: Text("voltar"),
+         
+          },
+    );
+}
+
+ 
+
+                   
+        // QUINTA PÁGINA ou TELA ou INTERFACE ou Activity
+//
+class QuintaPagina extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      
+      
+       title: Text("Sobre o Aplicativo"),
+        backgroundColor: Colors.red
+      
+      
+       title: Text("INFO"),
+       title: Text("Aplicativo desenvolvido para que nossos clientes sejam atendidos da melhor forma possivel, nosso estoque é exibido neste aplicativo para que todos fiquem informados da nossa variedades de produtos da moda(Camisas, Shorts, Tenis e Acessórios)."),
+        
+        
+              ),
+    
+     child: RaisedButton(
+          child: Text("voltar"),
+     
+            /*
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => QuintaPagina())
+            );
+            */
+            Navigator.pushNamed(context, '/pagina6');
+
+          },
+    ),
+   ),
+  }
+}
+
+      
+      
+      
+// SEXTA PÁGINA ou TELA ou INTERFACE ou Activity
+//
+class QuintaPagina extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      
+      
+       title: Text("CURTA NOSSA PAGINA NO FACEBOOK E GANHE UM CUPOM DE DESCONTO"),
+        backgroundColor: Colors.green
+      
+      
+        Icon(
+                Icons.thumbup,
+                color: Colors.blue,
+                size: 70.0,
+        
+        
+              
+      
+       Icon(
+                Icons.phoneandroid,
+                color: Colors.black,
+                size: 70.0,
+           ),
+    
+     child: RaisedButton(
+          child: Text("voltar"),
+     
+        
+   ),
+  
+}
+
